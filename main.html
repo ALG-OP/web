@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>something...</title>
+  <style>
+        body {
+      font-family: sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      width: 250px;
+    }
+
+    button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #3e8e41; /* Green hover */
+    }
+
+    #protectedContent {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>enter_password</h1>
+    <form>
+      <label for="password">put your date of birth in serial <br> example: 19990101</label>
+      <input type="password" id="password" required>
+      <br>
+      <button onclick="checkPassword()">Submit</button>
+    </form>
+    <div id="result" style="display: none;"> 
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const passwordInput = document.getElementById("password");
+      const resultDiv = document.getElementById("result");
+
+      const correctPassword = "20110318"; 
+
+      if (passwordInput.value === correctPassword) {
+        resultDiv.innerHTML = "<h2>correct password</h2><p>hello.</p>";
+        resultDiv.style.display = "block"; 
+        event.preventDefault(); 
+      } else {
+        resultDiv.innerHTML = "<h2>incorrect password</h2><p>enter it correctly or if you not that guy just exit.</p>"; 
+        resultDiv.style.display = "block"; 
+        event.preventDefault(); 
+      }
+    }
+  </script>
+</body>
+</html>
